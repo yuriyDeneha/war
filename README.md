@@ -1,27 +1,32 @@
-# War
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+WAR
 
-## Development server
+- Entities:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Participants
+Agressor
+Defender
+Weapons
+Coutries
+Actions
 
-## Code scaffolding
+- Agressor attack Defender Participant
+- Participans uses Weapons to do Actions
+- Participans attacks/defents on teritories on some Countries
+- Weapons used to destrog or do some damage to Country inftrastructure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1) Abstraction
 
-## Build
+a) define entities
+b) define relantionsips between entities
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2) Inheritance
 
-## Running unit tests
+Helps to avoid duplicaiton of code
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3) Incapsulation
 
-## Running end-to-end tests
+Oppotunity to hide some interface to be changed outside
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4) Polymorphism
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

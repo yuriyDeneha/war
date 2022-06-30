@@ -23,7 +23,7 @@ export class AppComponent {
 
     const military = new Military();
 
-    const usaRussiaWar = new War(usa, usa);
+    const usaRussiaWar = new War({agressor: usa, victim: usa});
 
 
     usaRussiaWar.start();

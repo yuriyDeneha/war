@@ -1,12 +1,11 @@
-import { Military } from './military.model';
-import { Agressor, Defender, Participant } from './participant.model';
+import { Agressor, Participant } from './participant.model';
 
 export class War {
 
-  agressor: Agressor;
+  agressor?: Agressor;
   victim: Participant;
 
-  constructor(agressor, victim) {
+  constructor(agressor: Agressor, victim: Participant) {
     this.agressor = agressor
     this.victim = victim
   }

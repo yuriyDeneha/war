@@ -3,14 +3,14 @@ import { Weapon } from "./weapon.mode";
 
 export class Participant {
   name: string;
-  weapons: Weapon[];
-  military: Military[];
+  military?: Military[];
+  weapons?: Weapon[];
   public goal: string;
 
   constructor (participant: Partial<Participant> = {}) {
     this.name = participant.name;
-    this.weapons = participant.weapons;
-    this.military = participant.military;
+    this.weapons = participant.weapons || null;
+    this.military = participant.military || null;
   }
 }
 

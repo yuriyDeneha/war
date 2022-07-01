@@ -1,0 +1,35 @@
+<h2>{{ warId ? 'Edit war' : 'Create war' }}</h2>
+
+
+<div class="forms">
+  <form class="template-driven-form"
+    (submit)="formTemplateSubmitted()">
+    <label for="">Agressor:</label>
+    <input type="text" name="agressor" [(ngModel)]="templateDrivenWarForm.agressor.name">
+    <label for="">Victim:</label>
+    <input type="text" name="Victim" [(ngModel)]="templateDrivenWarForm.victim.name">
+
+    <button type="reset">Reset</button>
+    <button type="submit"
+      [disabled]="
+      !templateDrivenWarForm.agressor.name
+      || !templateDrivenWarForm.victim.name
+      || templateDrivenWarForm.agressor.name.length > 10
+      || templateDrivenWarForm.victim.name.length > 10
+      "
+      >{{ warId ? 'Edit' : 'Create' }}</button>
+  </form>
+
+
+  <form class="reactive-form" [formGroup]="reactiveWarForm"
+    (submit)="formReactiveSubmitted()">
+    <label for="">Agressor:</label>
+    <input type="text" name="agressor" formControlName="agressor">
+    <label for="">Victim:</label>
+    <input type="text" name="Victim"  formControlName="victim">
+
+    <button type="reset">Reset</button>
+    <button type="submit"
+      [disabled]="reactiveWarForm.invalid">{{ warId ? 'Edit' : 'Create' }}</button>
+  </form>
+</div>

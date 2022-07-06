@@ -60,11 +60,11 @@ export class WarFormComponent implements OnInit {
   }
 
   getWar(warId: string) {
-    this.warsService.getById(warId)
-      .subscribe((war: War) => {
-        this.war = war;
-        this.patchWarForm(war)
-      })
+    // this.warsService.getById(warId)
+    //   .subscribe((war: War) => {
+    //     this.war = war;
+    //     this.patchWarForm(war)
+    //   })
   }
 
   patchWarForm(war: War) {

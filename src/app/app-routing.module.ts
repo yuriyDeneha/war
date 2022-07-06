@@ -1,3 +1,4 @@
+import { WarsTableComponent } from './wars-table/wars-table.component';
 import { WarsComponent } from './wars/wars.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -12,6 +13,10 @@ const routes = [
     path: 'wars',
     component: WarsComponent,
     children: [
+      {
+        path: 'all',
+        component: WarsTableComponent
+      },
       {
         path: 'create',
         component: WarFormComponent
@@ -37,7 +42,7 @@ const routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'create'
+        redirectTo: 'all'
       }
     ]
   },

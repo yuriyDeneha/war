@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Aggressor</th>
+    <th>Victim</th>
+    <th>Start date</th>
+    <th>End date</th>
+  </tr>
+  <tr *ngFor="let war of wars | sortWars : SortFields.Name">
+    <td>{{war.name}}</td>
+    <td>{{war.aggressor | addFlag}}</td>
+    <td>{{war.victim | addFlag}}</td>
+    <td>{{war.startDate | date : 'mediumDate'}}</td>
+    <td>{{war.endDate | date : 'mediumDate'}}</td>
+  </tr>
+</table>

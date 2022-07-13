@@ -11,6 +11,7 @@ import { UppercasePipe } from './pipes/uppercase.pipe';
 import { WarsTableComponent } from './wars-table/wars-table.component';
 import { AddFlagPipe } from './pipes/add-flag.pipe';
 import { SortWarsPipe } from './pipes/sort-wars.pipe';
+import { WarsTableRowComponent } from './wars-table/wars-table-row/wars-table-row.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SortWarsPipe } from './pipes/sort-wars.pipe';
     UppercasePipe,
     WarsTableComponent,
     AddFlagPipe,
-    SortWarsPipe
+    SortWarsPipe,
+    WarsTableRowComponent
   ],
   imports: [
     BrowserModule,

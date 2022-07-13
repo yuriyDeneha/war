@@ -1,0 +1,9 @@
+<li *ngIf="war"
+  (click)="warChanged.emit(war)">
+  <span>{{war.name}}</span>
+  <span>{{war.aggressor | addFlag}}</span>
+  <span>{{war.victim | addFlag}}</span>
+  <span>{{war.startDate | date : 'mediumDate'}}</span>
+  <span>{{war.endDate | date : 'mediumDate'}}</span>
+  <span>{{war.clickedTimes || 0}}</span>
+</li>

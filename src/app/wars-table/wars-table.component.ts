@@ -38,4 +38,11 @@ export class WarsTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onWarChanged(war: any) {
+    if (!war.clickedTimes) {
+      war.clickedTimes = 0;
+    }
+    war.clickedTimes ++;
+  }
+
 }

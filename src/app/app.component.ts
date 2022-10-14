@@ -33,6 +33,8 @@ export class AppComponent {
     }
   }
 
+  date = Date.now();
+
   language: "EN" | "UA" = "UA"
 
 

@@ -1,6 +1,8 @@
 
 <!-- <router-outlet></router-outlet> -->
 
+
+<h1>Date now: {{ date | date : 'fullDate'}};</h1>
 <app-header [translation]="language === 'UA' ? translationUAobject : translationENobject"></app-header>
 <app-languages-selector [language]="language" (languageChanged)="changeLanguage($event)"></app-languages-selector>
 

@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+
+<!-- <router-outlet></router-outlet> -->
+
+<app-header [translation]="language === 'UA' ? translationUAobject : translationENobject"></app-header>
+<app-languages-selector [language]="language" (languageChanged)="changeLanguage($event)"></app-languages-selector>
+
+<!-- <app-header [tranlation]="translationUAobject"></app-header> -->
+<!-- <app-get-phone [tranlation]="translationUAobject"></app-get-phone>
+<app-get-phone [tranlation]="translationUAobject"></app-get-phone>
+...
+<app-footer [tranlation]="translationUAobject"></app-footer> -->

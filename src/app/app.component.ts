@@ -11,6 +11,33 @@ import { Military } from './models/military.model';
 export class AppComponent {
   title = 'war';
 
+
+
+  translationENobject = {
+    header: {
+      cards: "Cards",
+      businessAccount: "Business account"
+    },
+    getPhoneSection: {
+
+    }
+  }
+
+  translationUAobject = {
+    header: {
+      cards: "Картки",
+      businessAccount: "Бізнес аккаунт"
+    },
+    getPhoneSection: {
+
+    }
+  }
+
+  language: "EN" | "UA" = "UA"
+
+
+
+
   constructor() {
 
       const usa = new Agressor({name: 'Usa country'});
@@ -27,5 +54,9 @@ export class AppComponent {
 
 
     usaRussiaWar.start();
+  }
+
+  changeLanguage(language: "EN" | "UA") {
+    this.language = language
   }
 }

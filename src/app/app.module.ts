@@ -12,6 +12,8 @@ import { WarsTableComponent } from './wars-table/wars-table.component';
 import { AddFlagPipe } from './pipes/add-flag.pipe';
 import { SortWarsPipe } from './pipes/sort-wars.pipe';
 import { WarsTableRowComponent } from './wars-table/wars-table-row/wars-table-row.component';
+import { HeaderComponent } from './header/header.component';
+import { LanguagesSelectorComponent } from './languages-selector/languages-selector.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { WarsTableRowComponent } from './wars-table/wars-table-row/wars-table-ro
     WarsTableComponent,
     AddFlagPipe,
     SortWarsPipe,
-    WarsTableRowComponent
+    WarsTableRowComponent,
+    HeaderComponent,
+    LanguagesSelectorComponent
   ],
   imports: [
     BrowserModule,

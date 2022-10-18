@@ -9,52 +9,52 @@ import { CommonModule } from '@angular/common';
 
 
 const routes = [
-//     {
-//     path: '',
-//     component: A,
-// }
-  // {
-  //   path: 'wars',
-  //   component: WarsComponent,
-  //   children: [
-  //     {
-  //       path: 'all',
-  //       component: WarsTableComponent
-  //     },
-  //     {
-  //       path: 'create',
-  //       component: WarFormComponent
-  //     },
-  //     {
-  //       path: ':warId',
-  //       children: [
-  //         {
-  //           path: 'update',
-  //           component: WarFormComponent
-  //         },
-  //         {
-  //           path: 'read',
-  //           component: WarFormComponent
-  //         },
-  //         {
-  //           path: '',
-  //           pathMatch: 'full',
-  //           redirectTo: 'update'
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: '',
-  //       pathMatch: 'full',
-  //       redirectTo: 'all'
-  //     }
-  //   ]
-  // },
   // {
   //   path: '',
-  //   pathMatch: 'full',
-  //   redirectTo: 'wars'
-  // }
+  //   component: A,
+  // },
+  {
+    path: 'wars',
+    component: WarsComponent,
+    children: [
+      {
+        path: 'all',
+        component: WarsTableComponent
+      },
+      {
+        path: 'create',
+        component: WarFormComponent
+      },
+      {
+        path: ':warId',
+        children: [
+          {
+            path: 'update',
+            component: WarFormComponent
+          },
+          {
+            path: 'read',
+            component: WarFormComponent
+          },
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'update'
+          }
+        ]
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'all'
+      }
+    ]
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'wars'
+  }
 ];
 @NgModule({
   declarations: [

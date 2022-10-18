@@ -22,8 +22,8 @@ export class WarFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private warsService: WarsService
   ) {
-    const usa = new Agressor({name: 'Usa country'});
-    const russia = new Agressor({name: 'Russia country'});
+    const usa = new Agressor({name: ''});
+    const russia = new Agressor({name: ''});
     const usaRussiaWar = new War(usa, russia);
 
     this.templateDrivenWarForm = usaRussiaWar;
@@ -42,11 +42,15 @@ export class WarFormComponent implements OnInit {
       });
   }
 
-  initForm() {
+  initForm(war: War) {
     this.reactiveWarForm = this.formBuilder.group({
-      agressor: [this.templateDrivenWarForm.agressor.name, [Validators.required, Validators.maxLength(10)]],
-      victim: [this.templateDrivenWarForm.victim.name, [Validators.required, Validators.maxLength(10)]],
+      agressor: [war.agressor.name, [Validators.required, Validators.maxLength(10)]],
+      victim: [war.victim.name, [Validators.required, Validators.maxLength(10)]],
     })
+  }
+
+  patchForm(war: War) {
+    this.reactiveWarForm.patchValue(war);
   }
 
   formTemplateSubmitted() {
@@ -54,6 +58,7 @@ export class WarFormComponent implements OnInit {
   }
 
   formReactiveSubmitted() {
+    console.log(this.reactiveWarForm.value);
     const war = this.reactiveWarForm.value;
     this.templateDrivenWarForm.agressor.name = war.agressor;
     this.templateDrivenWarForm.victim.name = war.victim;

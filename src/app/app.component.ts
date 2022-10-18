@@ -34,6 +34,7 @@ export class AppComponent {
   }
 
   date = Date.now();
+  formattedDate: string;
 
   language: "EN" | "UA" = "UA"
 
@@ -59,6 +60,11 @@ export class AppComponent {
   }
 
   changeLanguage(language: "EN" | "UA") {
-    this.language = language
+    this.language = language;
+    this.date = Date.now();
+  }
+
+  formtDate(date: number): string {
+    return new Date(date).toLocaleString();
   }
 }

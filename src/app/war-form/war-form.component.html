@@ -4,12 +4,12 @@
 <div class="forms">
   <form class="template-driven-form"
     (submit)="formTemplateSubmitted()">
-    <label for="">Agressor:</label>
+    <label for="">Agressor:</label> {{ templateDrivenWarForm.agressor.name}}
     <input type="text" name="agressor" [(ngModel)]="templateDrivenWarForm.agressor.name">
-    <label for="">Victim:</label>
+    <label for="">Victim:</label> {{templateDrivenWarForm.victim.name}}
     <input type="text" name="Victim" [(ngModel)]="templateDrivenWarForm.victim.name">
 
-    <button type="reset">Reset</button>
+    <button>Reset</button>
     <button type="submit"
       [disabled]="
       !templateDrivenWarForm.agressor.name

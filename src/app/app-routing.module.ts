@@ -18,22 +18,22 @@ const routes = [
     component: WarsComponent,
     children: [
       {
-        path: 'all',
-        component: WarsTableComponent
-      },
-      {
         path: 'create',
         component: WarFormComponent
+      },
+      {
+        path: 'all',
+        component: WarsTableComponent
       },
       {
         path: ':warId',
         children: [
           {
-            path: 'update',
+            path: 'read',
             component: WarFormComponent
           },
           {
-            path: 'read',
+            path: 'update',
             component: WarFormComponent
           },
           {

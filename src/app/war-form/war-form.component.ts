@@ -1,7 +1,7 @@
 import { War } from './../models/war.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Agressor } from '../models/participant.model';
 import { WarsService } from '../services/war.service';
 
@@ -13,13 +13,16 @@ import { WarsService } from '../services/war.service';
 export class WarFormComponent implements OnInit {
 
   warId: string;
+  war
 
   templateDrivenWarForm: War;
   reactiveWarForm: FormGroup;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+
     private formBuilder: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private warsService: WarsService
   ) {
     const usa = new Agressor({name: ''});
@@ -42,10 +45,10 @@ export class WarFormComponent implements OnInit {
       });
   }
 
-  initForm(war: War) {
+  initForm(war: Partial<War> = {}) {
     this.reactiveWarForm = this.formBuilder.group({
-      agressor: [war.agressor.name, [Validators.required, Validators.maxLength(10)]],
-      victim: [war.victim.name, [Validators.required, Validators.maxLength(10)]],
+      agressor: [war?.agressor?.name, [Validators.required, Validators.maxLength(10)]],
+      victim: [war?.victim?.name, [Validators.required, Validators.maxLength(10)]],
     })
   }
 
@@ -55,6 +58,12 @@ export class WarFormComponent implements OnInit {
 
   formTemplateSubmitted() {
     console.log(this.templateDrivenWarForm);
+
+    this.warsService.create(this.templateDrivenWarForm)
+      .then((war) => {
+        console.log(war);
+        this.router.navigate(['/wars', war.id, 'read'])
+      })
   }
 
   formReactiveSubmitted() {
@@ -65,11 +74,11 @@ export class WarFormComponent implements OnInit {
   }
 
   getWar(warId: string) {
-    // this.warsService.getById(warId)
-    //   .subscribe((war: War) => {
-    //     this.war = war;
-    //     this.patchWarForm(war)
-    //   })
+    this.warsService.getById(warId)
+      .subscribe((war: War) => {
+        this.war = war;
+        this.patchWarForm(war)
+      })
   }
 
   patchWarForm(war: War) {
